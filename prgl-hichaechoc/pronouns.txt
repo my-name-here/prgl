@@ -1,0 +1,4 @@
+#base endings cases it can be numbers it can be
+mē ["acc"] ["sg"]
+quid ["acc","nom"] ["sg","pl"]
+nihil ["acc","nom"] ["sg"]
