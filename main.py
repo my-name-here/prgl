@@ -6,7 +6,9 @@ def setup(is_first):
     lmnop=random.randint(1,3)
     #1 is presnt 2 is future 3 is past imperfect
     ### VERBS INIT ###
-
+    unusnauta_us_ending1=['a','īus','ī','am','ā','ae','ārum','īs','ās','īs']
+    unusnauta_us_ending2=['us','īus','ī','um','ō','ī','ōrum','īs','ōs','īs']
+    unusnauta_us_ending3=['um','īus','ī','um','ō','a','ōrum','īs','a','īs']
     hicend1=['aec','uius','uic','anc','āc','ae','ārum','īs','ās','īs']
     hicend2=['ic','uius','uic','onc','ōc','ī','ōrum','īs','ōs','īs']
     hicend3=['oc','uius','uic','oc','ōc','aec','ōrum','īs','aec','īs']
