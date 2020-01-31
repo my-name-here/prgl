@@ -138,7 +138,8 @@ def setup(is_first):
     
     if is_first:
         is_first=False
-
+    local=locals()
+    globals().update(local) #update globals to hold all locals
 ### GENERATE A NOUN PHRASE ###
 # I should make -are things appear here... later
 maxnounrecursiondeapth=3
