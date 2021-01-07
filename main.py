@@ -159,7 +159,7 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
 
         if chosennoun[0] == "?":
 
-            phrase = str(chosennoun[1][noun_ending_location(case, num)])
+            phrase = str(eval("chosennoun[1]")[noun_ending_location(case, num)])
 
         else:
             phrase = chosennoun[0]+eval("chosennoun[1]")[noun_ending_location(case, num)]
@@ -208,7 +208,7 @@ def sentance(si=False): # si is there so that there aren't nested ifs or multipl
         debug = [tempverb for tempverb in verbs if tempverb[2] == verb[2] and tempverb != verb and tempverb[3] != 'v']
         otherverb = random.choice(debug)
 
-        phrase.append([otherverb[0]+eval("otherverb[1]")[ending],8])
+        phrase.append([otherverb[0]+eval("otherverb[1]")[ending], 8])
     if verb[0] in ["d", "serv"] and random.randint(0, 1) == 1:
         phrase.append([nounphrase("dat"), 4])
     if random.randint(0, 1) == 1:
