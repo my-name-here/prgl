@@ -121,12 +121,10 @@ def setup(is_first):
             thirddec = [specialnoun[1]]
 
             thirddec.append(nombase)
-
             if specialnoun[2] == 'm' or specialnoun[2] == 'f':
                 [thirddec.append(i) for i in [specialnoun[0]+'is', specialnoun[0]+"ī", specialnoun[0]+"em", specialnoun[0]+"e", specialnoun[0]+"ēs", specialnoun[0]+"ēs", specialnoun[0]+"um", specialnoun[0]+"ibus", specialnoun[0]+"ēs", specialnoun[0]+"ibus"]]
             elif specialnoun[2] == 'n':
-                [thirddec.append(i) for i in [specialnoun[0]+'is', specialnoun[0]+"ī", nombase, specialnoun[0]+"e", specialnoun[0]+"a", specialnoun[0]+"um", specialnoun[0]+"ibus", specialnoun[0]+"a", specialnoun[0]+"ibus"]]
-
+                [thirddec.append(i) for i in [specialnoun[0]+'is', specialnoun[0]+"ī", nombase, specialnoun[0]+"e", specialnoun[0]+"a", specialnoun[0]+"a", specialnoun[0]+"um", specialnoun[0]+"ibus", specialnoun[0]+"a", specialnoun[0]+"ibus"]]
             else:
                 pass
             specialnoun[1] = thirddec[:]
