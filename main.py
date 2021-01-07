@@ -248,7 +248,7 @@ j = 0
 
 
 while j < 1000:
-#    try:
+    try:
         z = sentance()
         if 'si et' not in z and z != '':
             print(z)
@@ -261,7 +261,7 @@ while j < 1000:
 ##                print("------")
 ##
 ##                j+=1
-#    except:
+    except IndexError:
         pass
 ##
 ##
