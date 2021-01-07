@@ -95,7 +95,7 @@ def setup(is_first):
     pronouns = []
     f = open("pronouns.txt", "rt", encoding="utf-8")
     for line in f:
-        if line[0]!="#":
+        if line[0] != "#":
             pronouns.append(line[:-1].split())
     f.close()
     ### NOUNS INIT ###
@@ -134,9 +134,7 @@ def setup(is_first):
 
             nouns.append(specialnoun)
 
-
     f.close()
-
 
     if is_first:
         is_first = False
@@ -148,8 +146,8 @@ maxnounrecursiondeapth = 3
 def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
 
     if num == "pl":
-        if random.randint(0, 1) == 1 and nounrecursiondeapth<maxnounrecursiondeapth:
-            return nounphrase(case, num="sg", nounrecursiondeapth = nounrecursiondeapth+1)+" et "+nounphrase(case, num="sg", nounrecursiondeapth=nounrecursiondeapth+1)
+        if random.randint(0, 1) == 1 and nounrecursiondeapth < maxnounrecursiondeapth:
+            return nounphrase(case, num="sg", nounrecursiondeapth=nounrecursiondeapth+1)+" et "+nounphrase(case, num="sg", nounrecursiondeapth=nounrecursiondeapth+1)
 
     localnouns = copy.copy(nouns)
     for pronoun in pronouns:
@@ -163,7 +161,7 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
 
         if chosennoun[0] == "?":
 
-            phrase=str(chosennoun[1][noun_ending_location(case, num)])
+            phrase = str(chosennoun[1][noun_ending_location(case, num)])
 
         else:
             phrase = chosennoun[0]+eval("chosennoun[1]")[noun_ending_location(case, num)]
@@ -176,13 +174,13 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
 
                 if chosennoun[2] == "f":
                   phrase += " h"+hicend1[noun_ending_location(case, num)]
-                elif chosennoun[2]=="m":
+                elif chosennoun[2] == "m":
                   phrase += " h"+hicend2[noun_ending_location(case, num)]
                 elif chosennoun[2] == "n":
                   phrase += " h"+hicend3[noun_ending_location(case, num)]
 
-        if random.randint(0, 1) == 1 and nounrecursiondeapth<maxnounrecursiondeapth:
-            phrase += " "+nounphrase("gen", nounrecursiondeapth = nounrecursiondeapth+1)
+        if random.randint(0, 1) == 1 and nounrecursiondeapth < maxnounrecursiondeapth:
+            phrase += " "+nounphrase("gen", nounrecursiondeapth=nounrecursiondeapth+1)
 
     return phrase
 def sentance(si=False): # si is there so that there aren't nested ifs or multiple addresses
@@ -192,14 +190,14 @@ def sentance(si=False): # si is there so that there aren't nested ifs or multipl
     verb = random.choice(verbs)
     ending = random.randint(0, 7)
 
-    phrase=[]
+    phrase = []
     if ending == 2:
         phrase.append([nounphrase("nom", num="sg"), 3])
     if ending == 5:
         phrase.append([nounphrase("nom", num="pl"), 3])
 
     if verb[2] == "link":
-        #let this also be an adjective also
+        # let this also be an adjective also
         if ending in [0, 1, 2, 6]:
             num = "sg"
         else:
@@ -209,13 +207,13 @@ def sentance(si=False): # si is there so that there aren't nested ifs or multipl
         phrase.append([nounphrase("acc"), 5])
     if verb[3] == 'v':
         phrase.append([verb[0]+eval("verb[1]")[ending], 8])
-        debug= [tempverb for tempverb in verbs if tempverb[2] == verb[2] and tempverb != verb and tempverb[3]!='v']
+        debug = [tempverb for tempverb in verbs if tempverb[2] == verb[2] and tempverb != verb and tempverb[3] != 'v']
         otherverb = random.choice(debug)
 
         phrase.append([otherverb[0]+eval("otherverb[1]")[ending],8])
-    if verb[0] in ["d","serv"] and random.randint(0,1) == 1:
-        phrase.append([nounphrase("dat"),4])
-    if random.randint(0,1) == 1:
+    if verb[0] in ["d", "serv"] and random.randint(0, 1) == 1:
+        phrase.append([nounphrase("dat"), 4])
+    if random.randint(0, 1) == 1:
         prep = random.choice(prepositions)
         phrase.append([prep[0]+" "+nounphrase(prep[1]), 2])
     if not si and random.randint(0, 1) == 1:
@@ -236,7 +234,6 @@ def sentance(si=False): # si is there so that there aren't nested ifs or multipl
 
     phrase.sort(key=lambda x: x[1])
 
-
     return " ".join([subphrase[0] for subphrase in phrase])
 
 
@@ -250,7 +247,6 @@ j = 0
 ##        print(sentance())
 ##        print("------")
 ##        j+=1
-
 
 
 while j < 1000:
