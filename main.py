@@ -3,7 +3,7 @@ import copy
 is_first=True
 
 def setup(is_first):
-    lmnop=random.randint(1,3)
+    tense=random.randint(1,3)
     #1 is presnt 2 is future 3 is past imperfect
     ### VERBS INIT ###
     unusnauta_us_ending1=['a','īus','ī','am','ā','ae','ārum','īs','ās','īs']
@@ -12,7 +12,7 @@ def setup(is_first):
     hicend1=['aec','uius','uic','anc','āc','ae','ārum','īs','ās','īs']
     hicend2=['ic','uius','uic','onc','ōc','ī','ōrum','īs','ōs','īs']
     hicend3=['oc','uius','uic','oc','ōc','aec','ōrum','īs','aec','īs']
-    if lmnop==1:
+    if tense==1:
         verbendings1 = ["ō","as","at","amus","atis","ant","a","āte","āre"]
         verbendings2 = ["eō","es","et","emus","etis","ent","e","ēte","ēre"]
         verbendings3 = ["ō","is","it","imus","itis","unt","e","ite","ēre"]
@@ -32,7 +32,7 @@ def setup(is_first):
                 adjectives.append(line.strip().split(" "))
         f.close()
 
-    elif lmnop==2:
+    elif tense==2:
         verbendings1 = ["bō","bis","bit","bimus","bitis","bunt",'te','re']
         verbendings2 = ["bō","bis","bit","bimus","bitis","bunt",'te','re']
         verbendings3 = ["am","ēs","et","ēmus","ētis","ent","ite","ēre"]
