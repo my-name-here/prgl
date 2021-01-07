@@ -11,9 +11,9 @@ def setup(is_first):
     unusnauta_us_ending1 = ['a', 'īus', 'ī', 'am', 'ā', 'ae', 'ārum', 'īs', 'ās', 'īs']
     unusnauta_us_ending2 = ['us', 'īus', 'ī', 'um', 'ō', 'ī', 'ōrum', 'īs', 'ōs', 'īs']
     unusnauta_us_ending3 = ['um', 'īus', 'ī', 'um', 'ō', 'a', 'ōrum', 'īs', 'a', 'īs']
-    hicend1 = ['aec', 'uius', 'uic', 'anc', 'āc', 'ae', 'ārum', 'īs', 'ās', 'īs']
-    hicend2 = ['ic', 'uius', 'uic', 'onc', 'ōc', 'ī', 'ōrum', 'īs', 'ōs', 'īs']
-    hicend3 = ['oc', 'uius', 'uic', 'oc', 'ōc', 'aec', 'ōrum', 'īs', 'aec', 'īs']
+    hicend1 = ['aec', 'uius', 'uic', 'anc', 'āc', 'aec', 'ae', 'ārum', 'īs', 'ās', 'īs', "ae"]
+    hicend2 = ['ic', 'uius', 'uic', 'onc', 'ōc', "ic", 'ī', 'ōrum', 'īs', 'ōs', 'īs', 'ī']
+    hicend3 = ['oc', 'uius', 'uic', 'oc', 'ōc', 'oc', 'aec', 'ōrum', 'īs', 'aec', 'īs', "aec"]
     if tense == 1:
         verbendings1 = ["ō", "as", "at", "amus", "atis", "ant", "a", "āte", "āre"]
         verbendings2 = ["eō", "es", "et", "emus", "etis", "ent", "e", "ēte", "ēre"]
