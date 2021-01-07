@@ -2,7 +2,8 @@ import random
 import copy
 is_first = True
 
-
+def noun_ending_location(case, num):
+    return ["sg", "pl"].index(num)*6+["nom", "voc", "gen", "dat", "acc", "abl"].index(case)
 def setup(is_first):
     tense = random.randint(1, 3)
     # 1 is presnt 2 is future 3 is past imperfect
@@ -106,7 +107,7 @@ def setup(is_first):
 
 
 
-    nounendinglocation = lambda case, num:["sg", "pl"].index(num)*6+["nom", "voc", "gen", "dat", "acc", "abl"].index(case)
+    # nounendinglocation = lambda case, num:["sg", "pl"].index(num)*6+["nom", "voc", "gen", "dat", "acc", "abl"].index(case)
     nouns = []
     f = open("nouns.txt", "rt", encoding="utf-8")
     for line in f:
@@ -162,23 +163,23 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
 
         if chosennoun[0] == "?":
 
-            phrase=str(chosennoun[1][nounendinglocation(case, num)])
+            phrase=str(chosennoun[1][noun_ending_location(case, num)])
 
         else:
-            phrase = chosennoun[0]+eval("chosennoun[1]")[nounendinglocation(case, num)]
+            phrase = chosennoun[0]+eval("chosennoun[1]")[noun_ending_location(case, num)]
 
         if random.randint(0, 1) == 1:
             if random.randint(0, 3) != 0:
 
-                phrase += " "+random.choice(adjectives)[0]+{"f":nounendings1, "m":nounendings2, "n":nounendings3}[chosennoun[2]][nounendinglocation(case, num)]
+                phrase += " "+random.choice(adjectives)[0]+{"f":nounendings1, "m":nounendings2, "n":nounendings3}[chosennoun[2]][noun_ending_location(case, num)]
             else:
 
                 if chosennoun[2] == "f":
-                  phrase += " h"+hicend1[nounendinglocation(case, num)]
+                  phrase += " h"+hicend1[noun_ending_location(case, num)]
                 elif chosennoun[2]=="m":
-                  phrase += " h"+hicend2[nounendinglocation(case, num)]
+                  phrase += " h"+hicend2[noun_ending_location(case, num)]
                 elif chosennoun[2] == "n":
-                  phrase += " h"+hicend3[nounendinglocation(case, num)]
+                  phrase += " h"+hicend3[noun_ending_location(case, num)]
 
         if random.randint(0, 1) == 1 and nounrecursiondeapth<maxnounrecursiondeapth:
             phrase += " "+nounphrase("gen", nounrecursiondeapth = nounrecursiondeapth+1)
