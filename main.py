@@ -159,10 +159,17 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
 
         if chosennoun[0] == "?":
 
-            phrase = str(eval("chosennoun[1]")[noun_ending_location(case, num)])
+            phrase = str(eval('eval("chosennoun[1]")')[noun_ending_location(case, num)])
 
         else:
-            phrase = chosennoun[0]+eval("chosennoun[1]")[noun_ending_location(case, num)]
+            try:
+                if len(chosennoun[0])==1:# if there is an invisible character here
+                    phrase = eval("chosennoun[1]")[noun_ending_location(case, num)]
+                else:
+                    phrase = chosennoun[0]+eval('globals()[eval("chosennoun[1]")]')[noun_ending_location(case, num)]
+
+            except KeyError:
+                phrase = chosennoun[0]+eval("chosennoun[1]")[noun_ending_location(case, num)]
 
         if random.randint(0, 1) == 1:
             if random.randint(0, 3) != 0:
