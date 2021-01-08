@@ -140,7 +140,11 @@ def setup(is_first):
     globals().update(local) #update globals to hold all locals
 ### GENERATE A NOUN PHRASE ###
 # I should make -are things appear here... later
+
+
 maxnounrecursiondeapth = 3
+
+
 def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
 
     if num == "pl":
@@ -178,17 +182,19 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
             else:
 
                 if chosennoun[2] == "f":
-                  phrase += " h"+hicend1[noun_ending_location(case, num)]
+                    phrase += " h"+hicend1[noun_ending_location(case, num)]
                 elif chosennoun[2] == "m":
-                  phrase += " h"+hicend2[noun_ending_location(case, num)]
+                    phrase += " h"+hicend2[noun_ending_location(case, num)]
                 elif chosennoun[2] == "n":
-                  phrase += " h"+hicend3[noun_ending_location(case, num)]
+                    phrase += " h"+hicend3[noun_ending_location(case, num)]
 
         if random.randint(0, 1) == 1 and nounrecursiondeapth < maxnounrecursiondeapth:
             phrase += " "+nounphrase("gen", nounrecursiondeapth=nounrecursiondeapth+1)
 
     return phrase
-def sentance(si=False): # si is there so that there aren't nested ifs or multiple addresses
+
+
+def sentance(si=False):  # si is there so that there aren't nested ifs or multiple addresses
     setup(is_first)
     locals().update({'nounendings3': nounendings3})
 
