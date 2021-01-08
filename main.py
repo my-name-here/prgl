@@ -211,11 +211,11 @@ def sentance(si=False): # si is there so that there aren't nested ifs or multipl
     if verb[2] == "t":
         phrase.append([nounphrase("acc"), 5])
     if verb[3] == 'v':
-        phrase.append([verb[0]+eval("verb[1]")[ending], 8])
+        phrase.append([verb[0]+eval('globals()[eval("verb[1]")]')[ending], 8])
         debug = [tempverb for tempverb in verbs if tempverb[2] == verb[2] and tempverb != verb and tempverb[3] != 'v']
         otherverb = random.choice(debug)
 
-        phrase.append([otherverb[0]+eval("otherverb[1]")[ending], 8])
+        phrase.append([otherverb[0]+eval('globals()[eval("otherverb[1]")]')[ending], 8])
     if verb[0] in ["d", "serv"] and random.randint(0, 1) == 1:
         phrase.append([nounphrase("dat"), 4])
     if random.randint(0, 1) == 1:
@@ -232,8 +232,8 @@ def sentance(si=False): # si is there so that there aren't nested ifs or multipl
         debug = [tempverb for tempverb in verbs if tempverb[2] == verb[2] and tempverb != verb and tempverb[3]!='v']
 
         otherverb = random.choice(debug)
-        phrase.append(["et "+verb[0]+eval("verb[1]")[ending], 9])
-        phrase.append([otherverb[0]+eval("otherverb[1]")[ending], 9])
+        phrase.append(["et "+verb[0]+eval('globals()[eval("verb[1]")]')[ending], 9])
+        phrase.append([otherverb[0]+eval('globals()[eval("otherverb[1]")]')[ending], 9])
     if random.randint(0, 1) == 1 and not si:
         phrase.append(["si "+sentance(si=True)+",", 1])
 
