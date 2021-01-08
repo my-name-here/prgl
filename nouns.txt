@@ -1,15 +1,15 @@
 ### First Declention ###
 agricol nounendings1 m
-fām nounendings1 f
-fēmin nounendings1 f
-fīli ["a","a","ae","ae","am","ā","ae","ae","ārum","ābus","ās","ābus"] f
-de ["a","a","ae","ae","am","ā","ae","ae","ārum","ābus","ās","ābus"] f
-fōrm nounendings1 f
-fortūn nounendings1 f
-īr nounendings1 f
+fām nounendings1 f
+fēmin nounendings1 f
+fīli ["a","a","ae","ae","am","ā","ae","ae","ārum","ābus","ās","ābus"] f
+de ["a","a","ae","ae","am","ā","ae","ae","ārum","ābus","ās","ābus"] f
+fōrm nounendings1 f
+fortūn nounendings1 f
+īr nounendings1 f
 naut nounendings1 m
 patri nounendings1 f
-pecūni nounendings1 f
+pecūni nounendings1 f
 Eric nounendings1 f
 Illi nounendings1 m
 Yap nounendings1 m
@@ -19,12 +19,12 @@ Shilp nounendings1 f
 Sophi nounendings1 f
 Annik nounendings1 f
 poen nounendings1 f
-poēt nounendings1 m
+poēt nounendings1 m
 puell nounendings1 f
 ros nounendings1 f
 sapienti nounendings1 f
 sententi nounendings1 f
-vīt nounendings1 f
+vīt nounendings1 f
 Cynthi nounendings1 f
 paike nounendings1 f
 Caiy nounendings1 f
@@ -41,7 +41,7 @@ Ann nounendings1 f
 ### Second Declention ###
 Attic nounendings2 m
 ag nounendings2er m
-fīli nounendings2 m
+fīli nounendings2 m
 de nounendings2 m
 num nounendings2er m
 popul nounendings2 m
@@ -49,10 +49,10 @@ pu nounendings2er m
 Pet nounendings2er m
 Cart nounendings2er m
 Christoph nounendings2er m
-vi ["r","re","rī","rō","rum","rō","rī","rī","rōrum","rīs","rōs","rīs"] m
+vi ["r","re","rī","rō","rum","rō","rī","rī","rōrum","rīs","rōs","rīs"] m
 ### Other ###
-amīc nounendings1 f
-amīc nounendings2 m
+amīc nounendings1 f
+amīc nounendings2 m
 bāsi nounendings3 n
 cōnsili nounendings3 n
 dōn nounendings3 n
@@ -70,8 +70,8 @@ magistr nounendings1 f
 mor nounendings1 f
 Verb nounendings3 n
 Cael nounendings3 n
-Glōri nounendings1 f
-Aduleāscenti nounendings1 f
+Glōri nounendings1 f
+Aduleāscenti nounendings1 f
 Anim nounendings2 m
 Culp nounendings1 f
 Graec nounendings2 m
@@ -80,32 +80,32 @@ Viti nounendings3 n
 Tyrann nounendings2 m
 discipul nounendings2 m
 discipul nounendings1 f
-Īnsidi nounendings1 f
+Īnsidi nounendings1 f
 Statu nounendings1 f
 # base nom gender
 ~ carmin carmen n
-~ amor amōr m
-~ cīvitāt cīvitās f
+~ amor amōr m
+~ cīvitāt cīvitās f
 ~ corpor corpus n
-~ homin homō m
-~ labōr labor m
+~ homin homō m
+~ labōr labor m
 litter nounendings1 f
-~ mōr mōs m
-~ nōmin nōmen n
-~ pāc pāx f
-Rēgīn nounendings1 f
-~ rēg rēx m
+~ mōr mōs m
+~ nōmin nōmen n
+~ pāc pāx f
+Rēgīn nounendings1 f
+~ rēg rēx m
 ~ tempor tempus n
 Terr nounendings1 f
-~ uxōr uxor f
-~ virgin virgō f
-~ virtūt virtūs f
-~ sōl sōl m
-~ ratiōn ratiō f
-~ lībertāt lībertās f
-~ scrīptōr scrīptor m
-~ Sorōr soror f
-Victōri nounendings1 f
-Cōpi nounendings1 f
-~ frātris frāter m
+~ uxōr uxor f
+~ virgin virgō f
+~ virtūt virtūs f
+~ sōl sōl m
+~ ratiōn ratiō f
+~ lībertāt lībertās f
+~ scrīptōr scrīptor m
+~ Sorōr soror f
+Victōri nounendings1 f
+Cōpi nounendings1 f
+~ frātr frāter m
 ~ laud laus f
