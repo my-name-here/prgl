@@ -16,8 +16,8 @@ def noun_ending_location(case, num):
 
     Returns
     -------
-    TYPE
-        DESCRIPTION.
+    int
+        The index of the noun ending.
 
     """
     return ["sg", "pl"].index(num)*6+["nom", "voc", "gen", "dat", "acc", "abl"].index(case)
