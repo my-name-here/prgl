@@ -2,7 +2,24 @@ import random
 import copy
 is_first = True
 
+
 def noun_ending_location(case, num):
+    """
+    Tells you what the index of the noun ending is.
+
+    Parameters
+    ----------
+    case : string
+        what case is the noun in, "nom", "voc", "gen", "dat", "acc", "abl".
+    num : String
+        Is the given noun singular or plural "sg", "pl".
+
+    Returns
+    -------
+    TYPE
+        DESCRIPTION.
+
+    """
     return ["sg", "pl"].index(num)*6+["nom", "voc", "gen", "dat", "acc", "abl"].index(case)
 def setup(is_first):
     tense = random.randint(1, 3)
