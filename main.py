@@ -21,6 +21,8 @@ def noun_ending_location(case, num):
 
     """
     return ["sg", "pl"].index(num)*6+["nom", "voc", "gen", "dat", "acc", "abl"].index(case)
+
+
 def setup(is_first):
     tense = random.randint(1, 3)
     # 1 is presnt 2 is future 3 is past imperfect
@@ -170,13 +172,12 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
     hicend1 = setup_variables[3]
     hicend2 = setup_variables[4]
     hicend3 = setup_variables[5]
-    
     if num == "pl":
         if random.randint(0, 1) == 1 and nounrecursiondeapth < maxnounrecursiondeapth:
             return nounphrase(case, num="sg", nounrecursiondeapth=nounrecursiondeapth+1)+" et "+nounphrase(case, num="sg", nounrecursiondeapth=nounrecursiondeapth+1)
     localnouns = copy.copy(nouns)
     for pronoun in pronouns:
-        scope=locals()
+        scope = locals()
         if case in eval("pronoun[1]", scope) and num in eval("pronoun[2]", scope):
             localnouns.append(pronoun)
     chosennoun = random.choice(localnouns)
@@ -186,20 +187,20 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
     else:
 
         if chosennoun[0] == "?":
-            scope=locals()
+            scope = locals()
             phrase = str(eval('eval("chosennoun[1]")', scope)[noun_ending_location(case, num)])
 
         else:
             try:
                 if len(chosennoun[0])==1:# if there is an invisible character here
-                    scope=locals()
+                    scope = locals()
                     phrase = eval("chosennoun[1]", scope)[noun_ending_location(case, num)]
                 else:
-                    scope=locals()
+                    scope = locals()
                     phrase = chosennoun[0]+eval('globals()[eval("chosennoun[1]")]', scope)[noun_ending_location(case, num)]
 
             except KeyError:
-                scope=locals()
+                scope = locals()
                 phrase = chosennoun[0]+eval("chosennoun[1]", scope)[noun_ending_location(case, num)]
 
         if random.randint(0, 1) == 1:
@@ -231,7 +232,7 @@ def sentance(si=False):  # si is there so that there aren't nested ifs or multip
     verbendings2 = setup_variables[7]
     verbendings3 = setup_variables[8]
     verbendingsspecial = setup_variables[10]
-    
+
     locals().update({'nounendings3': nounendings3})
 
     verb = random.choice(verbs)
@@ -253,11 +254,11 @@ def sentance(si=False):  # si is there so that there aren't nested ifs or multip
     if verb[2] == "t":
         phrase.append([nounphrase("acc"), 5])
     if verb[3] == 'v':
-        scope=locals()
+        scope = locals()
         phrase.append([verb[0]+eval('globals()[eval("verb[1]")]', scope)[ending], 8])
         debug = [tempverb for tempverb in verbs if tempverb[2] == verb[2] and tempverb != verb and tempverb[3] != 'v']
         otherverb = random.choice(debug)
-        scope=locals()
+        scope = locals()
         phrase.append([otherverb[0]+eval('globals()[eval("otherverb[1]")]', scope)[ending], 8])
     if verb[0] in ["d", "serv"] and random.randint(0, 1) == 1:
         phrase.append([nounphrase("dat"), 4])
@@ -275,9 +276,9 @@ def sentance(si=False):  # si is there so that there aren't nested ifs or multip
         debug = [tempverb for tempverb in verbs if tempverb[2] == verb[2] and tempverb != verb and tempverb[3]!='v']
 
         otherverb = random.choice(debug)
-        scope=locals()
+        scope = locals()
         phrase.append(["et "+verb[0]+eval('globals()[eval("verb[1]")]', scope)[ending], 9])
-        scope=locals()
+        scope = locals()
         phrase.append([otherverb[0]+eval('globals()[eval("otherverb[1]")]', scope)[ending], 9])
     if random.randint(0, 1) == 1 and not si:
         phrase.append(["si "+sentance(si=True)+",", 1])
