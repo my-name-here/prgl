@@ -122,7 +122,6 @@ def setup(is_first):
     nounendings2 = ["us", "e", "ī", "ō", "um", "ō", "ī", "ī", "ōrum", "īs", "ōs", "īs"]
     nounendings2er = ["er", "er", "rī", "rō", "rum", "rō", "rī", "rī", "rōrum", "rīs", "rōs", "rīs"]
     nounendings3 = ["um", "um", "ī", "ō", "um", "ō", "a", "a", "ōrum", "īs", "as", "īs"]
-    thirddecn = ['is', "ī", "em", "e", "ēs", "ēs", "um", "ibus", "ēs", "ibus"]
 
     nouns = []
     f = open("nouns.txt", "rt", encoding="utf-8")
