@@ -192,7 +192,7 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
 
         else:
             try:
-                if len(chosennoun[0])==1:# if there is an invisible character here
+                if len(chosennoun[0]) == 1:  # if there is an invisible character here
                     scope = locals()
                     phrase = eval("chosennoun[1]", scope)[noun_ending_location(case, num)]
                 else:
@@ -206,7 +206,7 @@ def nounphrase(case, num=random.choice(["sg", "pl"]), nounrecursiondeapth=0):
         if random.randint(0, 1) == 1:
             if random.randint(0, 3) != 0:
 
-                phrase += " "+random.choice(adjectives)[0]+{"f":nounendings1, "m":nounendings2, "n":nounendings3}[chosennoun[2]][noun_ending_location(case, num)]
+                phrase += " "+random.choice(adjectives)[0]+{"f": nounendings1, "m": nounendings2, "n": nounendings3}[chosennoun[2]][noun_ending_location(case, num)]
             else:
 
                 if chosennoun[2] == "f":
@@ -273,7 +273,7 @@ def sentance(si=False):  # si is there so that there aren't nested ifs or multip
         phrase.append([random.choice(adverbs)[0], 7])
     if random.randint(0, 1) == 1 and verb[2] != 'link':
 
-        debug = [tempverb for tempverb in verbs if tempverb[2] == verb[2] and tempverb != verb and tempverb[3]!='v']
+        debug = [tempverb for tempverb in verbs if tempverb[2] == verb[2] and tempverb != verb and tempverb[3] != 'v']
 
         otherverb = random.choice(debug)
         scope = locals()
