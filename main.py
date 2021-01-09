@@ -105,9 +105,6 @@ def setup(is_first):
     nounendings3 = ["um", "um", "ī", "ō", "um", "ō", "a", "a", "ōrum", "īs", "as", "īs"]
     thirddecn = ['is', "ī", "em", "e", "ēs", "ēs", "um", "ibus", "ēs", "ibus"]
 
-
-
-    # nounendinglocation = lambda case, num:["sg", "pl"].index(num)*6+["nom", "voc", "gen", "dat", "acc", "abl"].index(case)
     nouns = []
     f = open("nouns.txt", "rt", encoding="utf-8")
     for line in f:
@@ -250,15 +247,6 @@ def sentance(si=False):  # si is there so that there aren't nested ifs or multip
 
 j = 0
 
-##while j<1000:
-##
-##
-##
-##
-##        print(sentance())
-##        print("------")
-##        j+=1
-
 
 while j < 1000:
     try:
@@ -268,21 +256,5 @@ while j < 1000:
             print("------")
             j += 1
 
-##        else:
-##            if random.randint(0, 100)==1:
-##                print(z)
-##                print("------")
-##
-##                j+=1
     except IndexError:
         pass
-##
-##
-####XX=True
-####
-##while XX:
-##        setup()
-##        yy=sentance()
-##        if len(yy.split())>=500:
-##            print(yy)
-##            XX=False
